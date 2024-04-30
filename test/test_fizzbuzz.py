@@ -28,9 +28,21 @@ def test_retornar_fizzbuzz_si_es_divisible_por_3_y_5():
 def test_retornar_numero_si_no_es_divisible_por_3_y_por_5():
     fizzbuzz = Fizzbuzz()
 
-    assert fizzbuzz.resultado(2) == 2
     assert fizzbuzz.resultado(1) == 1
     assert fizzbuzz.resultado(4) == 4
+
+
+def test_retornar_whiz_si_el_numero_es_primo():
+    fizzbuzz = Fizzbuzz()
+
+    assert fizzbuzz.resultado(2) == "Whiz"
+
+
+
+
+
+
+
 
 
 

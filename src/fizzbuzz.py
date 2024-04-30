@@ -12,6 +12,8 @@ class Fizzbuzz:
             return "Fizz"
         if self.__es_divisible_por_5(numero):
             return "Buzz"
+        if numero == 2:
+            return "Whiz"
         return numero
 
     def __es_divisible_por_3_y_5(self, numero):
@@ -22,3 +24,4 @@ class Fizzbuzz:
 
     def __es_divisible_por_3(self, numero):
         return numero % 3 == 0
+
