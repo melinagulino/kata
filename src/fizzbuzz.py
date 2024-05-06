@@ -12,9 +12,12 @@ class Fizzbuzz:
             return "Fizz"
         if self.__es_divisible_por_5(numero):
             return "Buzz"
-        if numero == 2:
-            return "Whiz"
-        return numero
+        if numero == 1:
+            return numero
+        for entero in range(2, numero):
+            if numero % entero == 0:
+                return numero
+        return "Whiz"
 
     def __es_divisible_por_3_y_5(self, numero):
         return self.__es_divisible_por_3(numero) and self.__es_divisible_por_5(numero)

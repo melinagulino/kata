@@ -36,6 +36,9 @@ def test_retornar_whiz_si_el_numero_es_primo():
     fizzbuzz = Fizzbuzz()
 
     assert fizzbuzz.resultado(2) == "Whiz"
+    assert fizzbuzz.resultado(7) == "Whiz"
+    assert fizzbuzz.resultado(11) == "Whiz"
+
 
 
 
