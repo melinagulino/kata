@@ -40,6 +40,13 @@ def test_retornar_whiz_si_el_numero_es_primo():
     assert fizzbuzz.resultado(11) == "Whiz"
 
 
+def test_retornar_fizzbuzz_si_el_numero_es_primo_y_divisible_por_r():
+    fizzbuzz = Fizzbuzz()
+
+    assert fizzbuzz.resultado(5) == "BuzzWhiz"
+
+
+
 
 
 
