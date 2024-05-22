@@ -39,6 +39,17 @@ def test_retornar_false_si_los_octetos_son_invalidos():
     assert validador_ip.validar_direccion_ipv4("1.1.1.-1") is False
 
 
-# test 0, 255, el o adelante
+def test_retornar_false_si_el_cuarto_octeto_es_0_o_255():
+    validador_ip = ValidadorIp()
+
+    assert validador_ip.validar_direccion_ipv4("1.1.1.0") is False
+    assert validador_ip.validar_direccion_ipv4("1.1.1.255") is False
 
 
+def test_retornar_false_si_el_tercer_octeto_empieza_con_():
+    validador_ip = ValidadorIp()
+
+    assert validador_ip.validar_direccion_ipv4("1.1.1.01") is False
+    assert validador_ip.validar_direccion_ipv4("1.1.01.1") is False
+    assert validador_ip.validar_direccion_ipv4("1.01.1.1") is False
+    assert validador_ip.validar_direccion_ipv4("01.1.1.1") is False
