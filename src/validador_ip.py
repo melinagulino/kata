@@ -1,14 +1,24 @@
-
 class ValidadorIp:
     def validar_direccion_ipv4(self, direccion_ip):
-        octetos = direccion_ip.split(".")
-        if len(octetos) != 4:
+        valores_octetos = direccion_ip.split(".")
+        if len(valores_octetos) != 4:
             return False
-        for octeto in octetos:
-            if int(octeto) < 0 or int(octeto) > 255:
-                return False
-            if int(octeto) > 0 and octeto.startswith("0"):
-                return False
-        if int(octetos[3]) == 0 or int(octetos[3]) == 255:
+        try:
+            octetos = [Octeto(octeto) for octeto in valores_octetos]
+        except ValueError:
+            return False
+        if octetos[3] == Octeto("0") or octetos[3] == Octeto("255"):
             return False
         return True
+
+
+class Octeto:
+    def __init__(self, valor):
+        if int(valor) < 0 or int(valor) > 255:
+            raise ValueError()
+        if int(valor) > 0 and valor.startswith("0"):
+            raise ValueError()
+        self.__valor = valor
+
+    def __eq__(self, other):
+        return self.__valor == other.__valor
